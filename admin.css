@@ -1,0 +1,54 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    background-color: skyblue;
+    color: whitesmoke;
+    line-height: 70px;
+    padding-left: 30px;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.logout {
+    float: right;
+    padding-right: 30px;
+    padding-bottom:200px;
+}
+
+ul {
+    background-color: #424a5b;
+    width: 16%;
+    height: 100%;
+    padding-top: 5%;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    padding-bottom: 30px;
+    font-size: 15px;
+}
+
+ul li a {
+    color: whitesmoke;
+    font-size: bold;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: aqua;
+    text-decoration: none;
+}
+.content{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.positioning{
+    padding-top: 100px;
+}

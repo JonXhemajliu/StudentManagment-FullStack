@@ -3,7 +3,6 @@
 //error_reporting(1);
 session_start();
 
-
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
     echo "<script type='text/javascript'>alert('$message')</script>";
@@ -19,7 +18,6 @@ $data = mysqli_connect($host, $user, $password, $db);
 $sql = "SELECT * FROM teacher";
 
 $query = mysqli_query($data, $sql);
-
 ?>
 
 

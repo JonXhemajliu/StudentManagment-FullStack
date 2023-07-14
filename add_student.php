@@ -23,9 +23,11 @@ if (isset($_POST['add_student'])) {
     $username = $_POST['name'];
     $user_email = $_POST['email'];
     $user_phone = $_POST['phone'];
-    $user_password = $_POST['password'];
-    $usertype = 'student';
 
+    $user_password = $_POST['password'];
+    $hashed_password = password_hash($user_password, PASSWORD_BCRYPT);
+
+    $usertype = 'student';
     //Checking data from the database
     $check = "SELECT * FROM user WHERE username = '$username'";
 
@@ -43,7 +45,7 @@ if (isset($_POST['add_student'])) {
     //Loop for inserting data into the database
     else {
 
-        $sql = "INSERT INTO user(username ,email,phone,password,usertype) VALUES ('$username','$user_email','$user_phone','$user_password','$usertype')";
+        $sql = "INSERT INTO user(username ,email,phone,password,usertype) VALUES ('$username','$user_email','$user_phone','$hashed_password','$usertype')";
 
         $result = mysqli_query($data, $sql);
 
@@ -56,7 +58,6 @@ if (isset($_POST['add_student'])) {
         }
     }
 }
-
 ?>
 <html>
 

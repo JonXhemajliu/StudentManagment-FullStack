@@ -29,10 +29,13 @@ if (isset($_POST['updateStudent'])) {
     $name = $_POST['username'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $password = $_POST['password'];
+
+    $user_password = $_POST['password'];
+    $hashed_password = password_hash($user_password, PASSWORD_BCRYPT);
+
     $id = $_POST['id'];
 
-    $query = "UPDATE user SET username = '$name', email = '$email', phone = '$phone', password = '$password' WHERE id = '$id' ";
+    $query = "UPDATE user SET username = '$name', email = '$email', phone = '$phone', password = '$hashed_password' WHERE id = '$id' ";
 
     $result2 = mysqli_query($data, $query);
 
@@ -43,7 +46,6 @@ if (isset($_POST['updateStudent'])) {
     }
 }
 
-//jidfnm
 ?>
 <html>
 
@@ -126,4 +128,4 @@ if (isset($_POST['updateStudent'])) {
 
 </body>
 
-</html> 
+</html>
